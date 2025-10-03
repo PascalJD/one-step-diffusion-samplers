@@ -1,0 +1,20 @@
+# configs/setup.yaml
+hydra:
+  run:
+    dir: logs/${hydra.job.name}/runs/${slug:${hydra:overrides.task}}_${now:%Y-%m-%d_%H-%M-%S}
+  sweep:
+    dir: logs/${hydra.job.name}/multiruns/${now:%Y-%m-%d_%H-%M-%S}
+    subdir: ${hydra.job.num}
+  job:
+    chdir: true
+
+
+wandb:
+  project: sdss
+  entity: your_wandb
+  dir: ${paths.output}
+  resume: allow
+  mode: run
+  name:
+  tags: []
+  id:

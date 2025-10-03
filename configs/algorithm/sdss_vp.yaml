@@ -1,0 +1,35 @@
+name: sdss_vp
+step_size: ${target.dis.step_size}
+batch_size: ${target.all.batch_size}
+iters: 60000
+loss: is
+grad_clip: 1.0
+max_diffusion: 10.0
+eval_ode: true
+
+defaults:
+  - model: pisgrad_net
+  - noise_schedule: cosine
+schedule_type: "cosine"
+beta_min: 0.01
+beta_max: ${algorithm.max_diffusion}
+
+model:
+  bias_init: 1.0
+  weight_init: 1e-8
+
+sd_warmup: 2500
+sd_wmax: 0.25
+ema_decay: 0.999
+
+trace_weight: 0.25
+n_trace_probes_train: 1
+jac_weight: 1e-4
+
+integrator_train: "em" 
+integrator_eval: "em"
+
+init_std: ${target.dis.initial_scale}
+num_steps: 128
+multi_eval_steps: [1,2,4,8,16,32,64,128]
+viz_eval_steps: 2

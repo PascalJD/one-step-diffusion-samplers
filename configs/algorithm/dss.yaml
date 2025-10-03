@@ -1,0 +1,38 @@
+defaults:
+  - teacher: disk
+  - model: pisgrad_net
+
+name: dss 
+
+# Training
+batch_size: ${target.all.batch_size}
+iters: 40000
+step_size: 5e-4 # learning rate
+init_std: ${algorithm.teacher.karras.sigma_max}
+num_steps: 128  # teacher discretization steps
+loss: "distillation"
+grad_clip: 1.0
+
+# Consistency-distillation options
+per_batch_t: false
+teacher_use_sde: false
+terminal_weighting: false
+
+# Evaluation
+eval_ode: true
+eval_steps: 1
+
+model:
+  bias_init: 1.0
+  weight_init: 1e-8
+
+debug:
+  plot_every: 400 
+  n_traj: 200 
+  pairs_batch: 100 
+  vis_grid: null  
+
+cm:
+  sigma_data: 0.5
+  eps: null 
+init_from_teacher: false

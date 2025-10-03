@@ -1,0 +1,5 @@
+# @package _global_.paths
+output: ${hydra:runtime.output_dir}
+ckpt_dir: ${paths.output}/checkpoints  # Orbax checkpoints
+metrics_dir: ${paths.output}/metrics  # optional JSON/CSV
+resume_from: ""

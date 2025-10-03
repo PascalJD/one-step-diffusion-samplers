@@ -1,0 +1,29 @@
+# @package _global_
+defaults:
+  - target: gaussian_mixture
+  - algorithm: dis
+  - paths: default  # central file‑system layout
+  - setup  # Hydra & W&B
+  - _self_
+
+# Experiment‑wide hyper‑parameters
+seed: 0
+use_jit: true
+eval_samples: 2000
+n_repeats: 5
+n_evals: 50  # number of evaluations during training
+
+moving_average:
+  use_ma: true
+  window_size: 5
+
+discrepancies: [sd, mmd]
+compute_emc: true
+compute_forward_metrics: true
+verbose: true
+
+# I/O flags
+use_wandb: true
+visualize_samples: true
+save_samples: true
+save_model: true  # Orbax checkpoints
