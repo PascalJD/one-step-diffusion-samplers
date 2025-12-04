@@ -1,4 +1,3 @@
-# algorithms/sdss_vp/eval.py
 from __future__ import annotations
 from functools import partial
 from pathlib import Path

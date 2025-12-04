@@ -10,7 +10,7 @@ hydra:
 
 
 wandb:
-  project: sdss
+  project: osds
   entity: your_wandb
   dir: ${paths.output}
   resume: allow

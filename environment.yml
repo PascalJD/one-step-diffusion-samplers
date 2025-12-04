@@ -1,4 +1,4 @@
-name: sdss
+name: osds
 channels:
   - conda-forge
 dependencies:

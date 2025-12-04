@@ -1,4 +1,4 @@
-name: sdss_vp
+name: osds
 step_size: ${target.dis.step_size}
 batch_size: ${target.all.batch_size}
 iters: 60000

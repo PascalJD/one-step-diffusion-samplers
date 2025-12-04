@@ -12,9 +12,9 @@ import orbax.checkpoint as ocp
 
 from algorithms.common.diffusion_related.init_model import init_model
 from algorithms.common.eval_methods.utils import extract_last_entry
-from algorithms.sdss_vp.fb_rnd import rnd
-from algorithms.sdss_vp.distill import distillation_loss
-from algorithms.sdss_vp.eval import get_multi_eval_fn
+from algorithms.osds.fb_rnd import rnd
+from algorithms.osds.distill import distillation_loss
+from algorithms.osds.eval import get_multi_eval_fn
 from utils.print_util import print_results
 
 log = logging.getLogger(__name__)
